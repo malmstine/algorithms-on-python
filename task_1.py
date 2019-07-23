@@ -14,12 +14,14 @@ def bubble_sort(array, compare=lambda a, b: a > b):
 
     while len_array > 1:
 
+        end_pos = 0
         for i in range(len_array - 1):
 
             if compare(array[i], array[i + 1]):
                 array[i], array[i + 1] = array[i + 1], array[i]
+                end_pos = i + 1
 
-        len_array -= 1
+        len_array = end_pos
 
     return array
 
